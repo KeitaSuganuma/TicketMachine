@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TiketMachine.Properties
+namespace TicketMachine.Properties
 {
 
 

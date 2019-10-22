@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiketMachine", "TiketMachine\TiketMachine.csproj", "{0CD25B57-ED07-40BF-BFD2-AE8B74FB8909}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketMachine", "TiketMachine\TicketMachine.csproj", "{0CD25B57-ED07-40BF-BFD2-AE8B74FB8909}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

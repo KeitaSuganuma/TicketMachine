@@ -17,13 +17,13 @@ namespace TicketMachine
     {
         contents.Format format = new contents.Format();
         //個々のおつり＝＝＝＝＝＝＝＝＝＝＝＝＝
-        private int ChangeTenThousandNum = 0;
-        private int ChangeFiveThousandNum = 0;
-        private int ChangeOneThousandNum = 0;
-        private int ChangeFiveHandredNum = 0;
-        private int ChangeOneHandredNum = 0;
-        private int ChangeFiftyNum = 0;
-        private int ChangeTenNum = 0;
+        private int changeTenThousandNum = 0;
+        private int changeFiveThousandNum = 0;
+        private int changeOneThousandNum = 0;
+        private int changeFiveHandredNum = 0;
+        private int changeOneHandredNum = 0;
+        private int changeFiftyNum = 0;
+        private int changeTenNum = 0;
         //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
         /// <summary>
@@ -45,13 +45,13 @@ namespace TicketMachine
             MoneyBalance();
             
             //各おつりを持っている各金種へ追加
-            contents.MoneyNum.TenNum += ChangeTenNum;
-            contents.MoneyNum.FiftyNum += ChangeFiftyNum;
-            contents.MoneyNum.OneHundredNum += ChangeOneHandredNum;
-            contents.MoneyNum.FiveHundredNum += ChangeFiveHandredNum;
-            contents.MoneyNum.OneThousandNum += ChangeOneThousandNum;
-            contents.MoneyNum.FiveThousandNum += ChangeFiveThousandNum;
-            contents.MoneyNum.TenThousandNum += ChangeTenThousandNum;
+            contents.MoneyNum.TenNum += changeTenNum;
+            contents.MoneyNum.FiftyNum += changeFiftyNum;
+            contents.MoneyNum.OneHundredNum += changeOneHandredNum;
+            contents.MoneyNum.FiveHundredNum += changeFiveHandredNum;
+            contents.MoneyNum.OneThousandNum += changeOneThousandNum;
+            contents.MoneyNum.FiveThousandNum += changeFiveThousandNum;
+            contents.MoneyNum.TenThousandNum += changeTenThousandNum;
 
             //使用した
             Label[] ListUseMoneyLabel = { UseTen, UseFifty, UseOneHundred, UseFiveHundred, UseOneThousand, UseFiveThousand, UseTenThousand };
@@ -65,7 +65,7 @@ namespace TicketMachine
 
             //おつり個別
             Label[] ListChangeMoneyLabel = { ChangeTen, ChangeFifty, ChangeOneHundred, ChangeFiveHundred, ChangeOneThousand, ChangeFiveThousand, ChangeTenThousand };
-            int[] ListChangeMoneyNum = { ChangeTenNum,ChangeFiftyNum,ChangeOneHandredNum,ChangeFiveHandredNum,ChangeOneThousandNum,ChangeFiveThousandNum,ChangeTenThousandNum};
+            int[] ListChangeMoneyNum = { changeTenNum,changeFiftyNum,changeOneHandredNum,changeFiveHandredNum,changeOneThousandNum,changeFiveThousandNum,changeTenThousandNum};
             format.ToText("おつり : ", ListChangeMoneyLabel, ListChangeMoneyNum);
 
             //お釣り合計
@@ -91,19 +91,19 @@ namespace TicketMachine
         {
             int sum = 0;
             sum = Money.sum - 130;
-            ChangeTenThousandNum = sum / 10000; 
+            changeTenThousandNum = sum / 10000; 
             sum %= 10000;
-            ChangeFiveThousandNum = sum / 5000;
+            changeFiveThousandNum = sum / 5000;
             sum %= 5000;
-            ChangeOneThousandNum = sum / 1000;
+            changeOneThousandNum = sum / 1000;
             sum %= 1000;
-            ChangeFiveHandredNum = sum / 500;
+            changeFiveHandredNum = sum / 500;
             sum %= 500;
-            ChangeOneHandredNum = sum / 100;
+            changeOneHandredNum = sum / 100;
             sum %= 100;
-            ChangeFiftyNum = sum / 50;
+            changeFiftyNum = sum / 50;
             sum %= 50;
-            ChangeTenNum = sum / 10;
+            changeTenNum = sum / 10;
         }
 
         /// <summary>

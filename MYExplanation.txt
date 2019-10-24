@@ -1,5 +1,6 @@
 実行フォルダ
-\TicketMachine\TicketMachine\TicketMachine\bin\Releaseのexe
+(デバックしてから)
+\TicketMachine\TicketMachine\TicketMachine\bin\Release　or Debugのexe
 
 作業環境　
 VisualStudio2017 Windows Formアプリケーション

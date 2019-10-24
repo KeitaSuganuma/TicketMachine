@@ -68,8 +68,21 @@
     <Compile Include="AfterPurchase.Designer.cs">
       <DependentUpon>AfterPurchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="AfterPurchase_EleMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfterPurchase_EleMoney.Designer.cs">
+      <DependentUpon>AfterPurchase_EleMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="contents\ElectronicMoneyNum.cs" />
     <Compile Include="contents\Format.cs" />
     <Compile Include="contents\MoneyNum.cs" />
+    <Compile Include="ElectronicMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElectronicMoney.Designer.cs">
+      <DependentUpon>ElectronicMoney.cs</DependentUpon>
+    </Compile>
     <Compile Include="HowToBuy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +106,12 @@
     <EmbeddedResource Include="AfterPurchase.resx">
       <DependentUpon>AfterPurchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AfterPurchase_EleMoney.resx">
+      <DependentUpon>AfterPurchase_EleMoney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElectronicMoney.resx">
+      <DependentUpon>ElectronicMoney.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HowToBuy.resx">
       <DependentUpon>HowToBuy.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +126,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Top.resx">
       <DependentUpon>Top.cs</DependentUpon>
@@ -138,6 +158,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_5000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_10000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\train_ic_card.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

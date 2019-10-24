@@ -32,6 +32,7 @@ namespace TicketMachine
 
         private void Money_Load(object sender, EventArgs e)
         {
+            sum = 0;
             moneyNum.AddItems(TenThousand, contents.MoneyNum.TenThousandNum);
             moneyNum.AddItems(FiveThousand, contents.MoneyNum.FiveThousandNum);
             moneyNum.AddItems(OneThousand, contents.MoneyNum.OneThousandNum);

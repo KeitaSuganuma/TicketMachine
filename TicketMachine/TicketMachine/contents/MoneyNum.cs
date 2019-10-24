@@ -25,13 +25,15 @@ namespace TicketMachine.contents
         public static int TenThousandNum
         {
             get { return tenThousand; }
-            set { if (tenThousand > 0) { tenThousand = value; } }
+            set { if (tenThousand >= 0) { tenThousand = value; } }
         }
 
         /// <summary>
         /// 使用した一万円
         /// </summary>
-        public static int UseTenThousand{ get; set; }
+        public static int UseTenThousand { get; set; }
+
+        //===============================================================
 
         /// <summary>
         /// ５千円
@@ -39,7 +41,7 @@ namespace TicketMachine.contents
         public static int FiveThousandNum
         {
             get { return fiveThousand; }
-            set { if (fiveThousand > 0) { fiveThousand = value; } }
+            set { if (fiveThousand >= 0) { fiveThousand = value; } }
         }
 
         /// <summary>
@@ -47,13 +49,16 @@ namespace TicketMachine.contents
         /// </summary>
         public static int UseFiveThousand { get; set; }
 
+
+        //===============================================================
+
         /// <summary>
         /// １千円
         /// </summary>
         public static int OneThousandNum
         {
             get { return oneThousand; }
-            set { if (oneThousand > 0) { oneThousand = value; } }
+            set { if (oneThousand >= 0) { oneThousand = value; } }
         }
 
         /// <summary>
@@ -61,18 +66,22 @@ namespace TicketMachine.contents
         /// </summary>
         public static int UseOneThousand { get; set; }
 
+        //===============================================================
+
         /// <summary>
         ///　５００円
         /// </summary>
         public static int FiveHundredNum
         {
             get { return fiveHundred; }
-            set { if (fiveHundred > 0) { fiveHundred = value; } }
+            set { if (fiveHundred >= 0) { fiveHundred = value; } }
         }
         /// <summary>
         /// 使用した500円
         /// </summary>
         public static int UseFiveHundred { get; set; }
+
+        //===============================================================
 
         /// <summary>
         /// １００円
@@ -80,7 +89,7 @@ namespace TicketMachine.contents
         public static int OneHundredNum
         {
             get { return oneHundred; }
-            set { if (oneHundred > 0) { oneHundred = value; } }
+            set { if (oneHundred >= 0) { oneHundred = value; } }
         }
 
         /// <summary>
@@ -88,13 +97,16 @@ namespace TicketMachine.contents
         /// </summary>
         public static int UseOneHundred { get; set; }
 
+
+        //===============================================================
+
         /// <summary>
         /// ５０円
         /// </summary>
         public static int FiftyNum
         {
             get { return fifty; }
-            set { if (fifty > 0) { fifty = value; } }
+            set { if (fifty >= 0) { fifty = value; } }
         }
 
         /// <summary>
@@ -102,13 +114,16 @@ namespace TicketMachine.contents
         /// </summary>
         public static int UseFifty { get; set; }
 
+
+        //===============================================================
+
         /// <summary>
         /// １０円
         /// </summary>
         public static int TenNum
         {
             get { return ten; }
-            set { if (ten > 0) { ten = value; } }
+            set { if (ten >= 0) { ten = value; } }
         }
 
         /// <summary>
@@ -116,14 +131,17 @@ namespace TicketMachine.contents
         /// </summary>
         public static int UseTen { get; set; }
 
+        //===============================================================
+
         /// <summary>
         ///　アイテムの大きさ分を追加
         /// </summary>
         /// <param name="domain"></param>
         /// <param name="numLange"></param>
-        public void AddItems(DomainUpDown domain,int numLange)
+        public void AddItems(DomainUpDown domain, int numLange)
         {
-            for(int i = 0; i <= numLange; i++) { domain.Items.Add(i); }
+            for (int i = 0; i <= numLange; i++) { domain.Items.Add(i); }
         }
+   
     }
 }

@@ -43,7 +43,8 @@ namespace TicketMachine
         /// <param name="e"></param>
         private void Electronic_Money_Click(object sender, EventArgs e)
         {
-
+            ElectronicMoney electronicMoney = new ElectronicMoney();
+            format.SeceneChange(this, electronicMoney);
         }
 
         private void Proto_FormClosing(object sender, FormClosingEventArgs e)

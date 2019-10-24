@@ -46,10 +46,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.PurchaseButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TenThousand
             // 
+            this.TenThousand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TenThousand.Location = new System.Drawing.Point(44, 307);
             this.TenThousand.Name = "TenThousand";
             this.TenThousand.Size = new System.Drawing.Size(53, 25);
@@ -77,7 +79,7 @@
             // 
             // FiveHundred
             // 
-            this.FiveHundred.Location = new System.Drawing.Point(157, 420);
+            this.FiveHundred.Location = new System.Drawing.Point(220, 420);
             this.FiveHundred.Name = "FiveHundred";
             this.FiveHundred.Size = new System.Drawing.Size(53, 25);
             this.FiveHundred.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             // OneHundred
             // 
-            this.OneHundred.Location = new System.Drawing.Point(267, 420);
+            this.OneHundred.Location = new System.Drawing.Point(330, 420);
             this.OneHundred.Name = "OneHundred";
             this.OneHundred.Size = new System.Drawing.Size(53, 25);
             this.OneHundred.TabIndex = 4;
@@ -95,7 +97,7 @@
             // 
             // Fifty
             // 
-            this.Fifty.Location = new System.Drawing.Point(372, 420);
+            this.Fifty.Location = new System.Drawing.Point(435, 420);
             this.Fifty.Name = "Fifty";
             this.Fifty.Size = new System.Drawing.Size(53, 25);
             this.Fifty.TabIndex = 5;
@@ -104,7 +106,7 @@
             // 
             // Ten
             // 
-            this.Ten.Location = new System.Drawing.Point(470, 420);
+            this.Ten.Location = new System.Drawing.Point(533, 420);
             this.Ten.Name = "Ten";
             this.Ten.Size = new System.Drawing.Size(53, 25);
             this.Ten.TabIndex = 6;
@@ -141,7 +143,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(154, 380);
+            this.label4.Location = new System.Drawing.Point(217, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 18);
             this.label4.TabIndex = 10;
@@ -150,7 +152,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(264, 380);
+            this.label5.Location = new System.Drawing.Point(327, 380);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 18);
             this.label5.TabIndex = 11;
@@ -159,7 +161,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(369, 380);
+            this.label6.Location = new System.Drawing.Point(432, 380);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 18);
             this.label6.TabIndex = 12;
@@ -168,7 +170,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(467, 380);
+            this.label7.Location = new System.Drawing.Point(530, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 18);
             this.label7.TabIndex = 13;
@@ -195,7 +197,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(165, 99);
+            this.label9.Location = new System.Drawing.Point(168, 108);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(191, 18);
             this.label9.TabIndex = 16;
@@ -211,11 +213,21 @@
             this.PurchaseButton.UseVisualStyleBackColor = true;
             this.PurchaseButton.Click += new System.EventHandler(this.PurchaseButton_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(50, 397);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 18);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "↑減算　↓加算";
+            // 
             // Money
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(778, 544);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.PurchaseButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -262,5 +274,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button PurchaseButton;
+        private System.Windows.Forms.Label label10;
     }
 }

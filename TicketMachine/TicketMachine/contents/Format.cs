@@ -21,5 +21,19 @@ namespace TicketMachine.contents
 
             beforeForm.Hide();
         }
+
+        /// <summary>
+        /// ラベルに該当のINT書き込み
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="labels"></param>
+        /// <param name="nums"></param>
+        public void ToText(String title, Label[] labels, int[] nums)
+        {
+            for (int i = 0; i < labels.Length; i++)
+            {
+                labels[i].Text = title + nums[i].ToString();
+            }
+        }
     }
 }

@@ -12,13 +12,13 @@ namespace TicketMachine
 {
     public partial class AfterPurchase : Form
     {
-        private int ChangeTenThousand;
-        private int ChangeFiveThousand;
-        private int ChangeOneThousand;
-        private int ChangeFiveHandred;
-        private int ChangeOneHandred;
-        private int ChangeFifty;
-        private int ChangeTen;
+        private int ChangeTenThousandNum = 0;
+        private int ChangeFiveThousandNum = 0;
+        private int ChangeOneThousandNum = 0;
+        private int ChangeFiveHandredNum = 0;
+        private int ChangeOneHandredNum = 0;
+        private int ChangeFiftyNum = 0;
+        private int ChangeTenNum = 0;
 
         public AfterPurchase()
         {
@@ -29,38 +29,64 @@ namespace TicketMachine
         private void AfterPurchase_Load(object sender, EventArgs e)
         {
             MoneyBalance();
+            contents.Format format = new contents.Format();
 
-            contents.MoneyNum.TenNum += ChangeTen;
-            contents.MoneyNum.FiftyNum += ChangeFifty;
-            contents.MoneyNum.OneHundredNum += ChangeOneHandred;
-            contents.MoneyNum.FiveHundredNum += ChangeFiveHandred;
-            contents.MoneyNum.OneThousandNum += ChangeOneThousand;
-            contents.MoneyNum.FiveThousandNum += ChangeFiveThousand;
-            contents.MoneyNum.TenThousandNum += ChangeTenThousand;
-
-            //残った
-            TenNum.Text = contents.MoneyNum.TenNum.ToString();
-            FiftyNum.Text = contents.MoneyNum.FiftyNum.ToString();
-            OneHundred.Text = contents.MoneyNum.OneHundredNum.ToString();
-            FiveHundred.Text = contents.MoneyNum.FiveHundredNum.ToString();
-            OneThousand.Text = contents.MoneyNum.OneThousandNum.ToString();
-            FiveThousand.Text = contents.MoneyNum.FiveThousandNum.ToString();
-            TenThousand.Text = contents.MoneyNum.TenThousandNum.ToString();
+            contents.MoneyNum.TenNum += ChangeTenNum;
+            contents.MoneyNum.FiftyNum += ChangeFiftyNum;
+            contents.MoneyNum.OneHundredNum += ChangeOneHandredNum;
+            contents.MoneyNum.FiveHundredNum += ChangeFiveHandredNum;
+            contents.MoneyNum.OneThousandNum += ChangeOneThousandNum;
+            contents.MoneyNum.FiveThousandNum += ChangeFiveThousandNum;
+            contents.MoneyNum.TenThousandNum += ChangeTenThousandNum;
 
             //使用した
-            UseTen.Text = contents.MoneyNum.UseTen.ToString();
-            UseFifty.Text = contents.MoneyNum.UseFifty.ToString();
-            UseOneHundred.Text = contents.MoneyNum.UseOneHundred.ToString();
-            UseFiveHundred.Text = contents.MoneyNum.UseFiveHundred.ToString();
-            UseOneThousand.Text = contents.MoneyNum.UseOneThousand.ToString();
-            UseFiveThousand.Text = contents.MoneyNum.UseFiveThousand.ToString();
-            UseTenThousand.Text = contents.MoneyNum.UseTenThousand.ToString();
+            Label[] ListUseMoneyLabel = { UseTen, UseFifty, UseOneHundred, UseFiveHundred, UseOneThousand, UseFiveThousand, UseTenThousand };
+            int[] ListUseMoneyNum = { contents.MoneyNum.UseTen, contents.MoneyNum.UseFifty, contents.MoneyNum.UseOneHundred, contents.MoneyNum.UseFiveHundred, contents.MoneyNum.UseOneThousand, contents.MoneyNum.UseFiveThousand, contents.MoneyNum.UseTenThousand };
+            format.ToText("使用数 : ", ListUseMoneyLabel, ListUseMoneyNum);
 
-            //お釣り
+            //残り一覧
+            Label[] ListMoneyLabel = { TenNum, FiftyNum, OneHundred, FiveHundred, OneThousand, FiveThousand, TenThousand };
+            int[] ListMoneyNum = { contents.MoneyNum.TenNum, contents.MoneyNum.FiftyNum, contents.MoneyNum.OneHundredNum, contents.MoneyNum.FiveHundredNum, contents.MoneyNum.OneThousandNum, contents.MoneyNum.FiveThousandNum, contents.MoneyNum.TenThousandNum };
+            format.ToText("残り : ", ListMoneyLabel, ListMoneyNum);
+
+            //おつり個別
+            Label[] ListChangeMoneyLabel = { ChangeTen, ChangeFifty, ChangeOneHundred, ChangeFiveHundred, ChangeOneThousand, ChangeFiveThousand, ChangeTenThousand };
+            int[] ListChangeMoneyNum = { ChangeTenNum,ChangeFiftyNum,ChangeOneHandredNum,ChangeFiveHandredNum,ChangeOneThousandNum,ChangeFiveThousandNum,ChangeTenThousandNum};
+            format.ToText("おつり : ", ListChangeMoneyLabel, ListChangeMoneyNum);
+
+            //お釣り合計
             Balance.Text = (Money.sum - 130).ToString();
 
-            test.Text = ChangeTenThousand + "/" + ChangeFiveThousand + "/" + ChangeOneThousand +
-                "/" + ChangeFiveHandred + "/" + ChangeOneHandred + "/" + ChangeFifty + "/" + ChangeTen;
+            #region
+            //使用した
+            //UseTen.Text = "使用数 : " + contents.MoneyNum.UseTen.ToString();
+            //UseFifty.Text = "使用数 : " + contents.MoneyNum.UseFifty.ToString();
+            //UseOneHundred.Text = "使用数 : " + contents.MoneyNum.UseOneHundred.ToString();
+            //UseFiveHundred.Text = "使用数 : " + contents.MoneyNum.UseFiveHundred.ToString();
+            //UseOneThousand.Text = "使用数 : " + contents.MoneyNum.UseOneThousand.ToString();
+            //UseFiveThousand.Text = "使用数 : " + contents.MoneyNum.UseFiveThousand.ToString();
+            //UseTenThousand.Text = "使用数 : " + contents.MoneyNum.UseTenThousand.ToString();
+            #endregion
+            #region
+            //残った
+            //TenNum.Text = "残り : " + contents.MoneyNum.TenNum.ToString();
+            //FiftyNum.Text = "残り : " + contents.MoneyNum.FiftyNum.ToString();
+            //OneHundred.Text = "残り : " + contents.MoneyNum.OneHundredNum.ToString();
+            //FiveHundred.Text = "残り : " + contents.MoneyNum.FiveHundredNum.ToString();
+            //OneThousand.Text = "残り : " + contents.MoneyNum.OneThousandNum.ToString();
+            //FiveThousand.Text = "残り : " + contents.MoneyNum.FiveThousandNum.ToString();
+            //TenThousand.Text = "残り : " + contents.MoneyNum.TenThousandNum.ToString();
+            #endregion
+            #region
+            //おつり個別
+            //ChangeTenThousand.Text = "おつり : " + ChangeTenThousandNum.ToString();
+            //ChangeFiveThousand.Text = "おつり : " + ChangeFiveThousandNum.ToString();
+            //ChangeOneThousand.Text = "おつり : " + ChangeOneThousandNum.ToString();
+            //ChangeFiveHundred.Text = "おつり : " + ChangeFiveHandredNum.ToString();
+            //ChangeOneHundred.Text = "おつり : " + ChangeOneHandredNum.ToString();
+            //ChangeFifty.Text = "おつり : " + ChangeFiftyNum.ToString();
+            //ChangeTen.Text = "おつり : " + ChangeTenNum.ToString();
+            #endregion
         }
 
         private void Proto_FormClosing(object sender, FormClosingEventArgs e)
@@ -72,26 +98,29 @@ namespace TicketMachine
         {
             Top top = new Top();
             contents.Format format = new contents.Format();
-
             format.SeceneChange(this, top);
         }
 
+        /// <summary>
+        /// お釣り計算
+        /// </summary>
         public void MoneyBalance()
         {
-            int sum = Money.sum - 130;
-            ChangeTenThousand = sum / 10000;
+            int sum = 0;
+            sum = Money.sum - 130;
+            ChangeTenThousandNum = sum / 10000;
             sum %= 10000;
-            ChangeFiveThousand = sum / 5000;
+            ChangeFiveThousandNum = sum / 5000;
             sum %= 5000;
-            ChangeOneThousand = sum / 1000;
+            ChangeOneThousandNum = sum / 1000;
             sum %= 1000;
-            ChangeFiveHandred = sum / 500;
+            ChangeFiveHandredNum = sum / 500;
             sum %= 500;
-            ChangeOneHandred = sum / 100;
+            ChangeOneHandredNum = sum / 100;
             sum %= 100;
-            ChangeFifty = sum / 50;
+            ChangeFiftyNum = sum / 50;
             sum %= 50;
-            ChangeTen = sum / 10;
+            ChangeTenNum = sum / 10;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace TicketMachine
         //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
         /// <summary>
-        /// コンストラク
+        /// コンストラクタ
         /// </summary>
         public AfterPurchase_Money()
         {

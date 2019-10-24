@@ -1,0 +1,8 @@
+実行フォルダ
+\TicketMachine\TicketMachine\TicketMachine\bin\Releaseのexe
+
+作業環境　
+VisualStudio2017 Windows Formアプリケーション
+(.NET Framework)
+
+

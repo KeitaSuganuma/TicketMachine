@@ -16,7 +16,7 @@ namespace TicketMachine
     public partial class AfterPurchase_EleMoney : Form
     {
         /// <summary>
-        /// コンストラク
+        /// コンストラクタ
         /// </summary>
         public AfterPurchase_EleMoney()
         {

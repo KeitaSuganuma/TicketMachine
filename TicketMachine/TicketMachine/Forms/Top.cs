@@ -16,6 +16,9 @@ namespace TicketMachine
     public partial class Top : Form
     {
         contents.Format format = new contents.Format();
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public Top()
         {
             //初期ページのため

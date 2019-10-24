@@ -19,7 +19,7 @@ namespace TicketMachine
         bool isClick = false;
 
         /// <summary>
-        /// コンストラク
+        /// コンストラクタ
         /// </summary>
         public ElectronicMoney()
         {

@@ -83,7 +83,7 @@
             this.Controls.Add(this.BalanceMoney);
             this.Controls.Add(this.label1);
             this.Name = "AfterPurchase_EleMoney";
-            this.Text = "AfterPurchase_EleMoney";
+            this.Text = "TicketMachine";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Proto_FormClosing);
             this.Load += new System.EventHandler(this.AfterPurchase_EleMoney_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

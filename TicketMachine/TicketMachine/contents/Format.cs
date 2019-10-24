@@ -23,7 +23,17 @@ namespace TicketMachine.contents
         }
 
         /// <summary>
-        /// ラベルに該当のINT書き込み
+        ///　金種の数分をアイテム追加
+        /// </summary>
+        /// <param name="domain"></param>
+        /// <param name="numLange"></param>
+        public void AddItems(DomainUpDown domain, int numLange)
+        {
+            for (int i = 0; i <= numLange; i++) { domain.Items.Add(i); }
+        }
+
+        /// <summary>
+        /// Labelテキストに数を描画(タイトルつき)
         /// </summary>
         /// <param name="title"></param>
         /// <param name="labels"></param>

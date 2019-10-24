@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace TicketMachine
 {
+    /// <summary>
+    /// お金で支払い
+    /// </summary>
     public partial class Money : Form
     {
-        contents.MoneyNum moneyNum = new contents.MoneyNum();
+        //すべての合計値
         public static int sum = 0;
+        contents.Format format = new contents.Format();
+        contents.MoneyNum moneyNum = new contents.MoneyNum();
 
+        //個々の合計＝＝＝＝＝＝＝＝＝＝＝＝＝
         int tenNum = 0;
         int fiftyNum = 0;
         int oneHundredNum = 0;
@@ -22,31 +28,41 @@ namespace TicketMachine
         int oneThousandNum = 0;
         int fiveThousandNum = 0;
         int tenThousandNum = 0;
+        //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public Money()
         {
-            this.FormClosing += Proto_FormClosing;
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// 読み込み時
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Money_Load(object sender, EventArgs e)
         {
             sum = 0;
-            moneyNum.AddItems(TenThousand, contents.MoneyNum.TenThousandNum);
-            moneyNum.AddItems(FiveThousand, contents.MoneyNum.FiveThousandNum);
-            moneyNum.AddItems(OneThousand, contents.MoneyNum.OneThousandNum);
-            moneyNum.AddItems(FiveHundred, contents.MoneyNum.FiveHundredNum);
-            moneyNum.AddItems(OneHundred, contents.MoneyNum.OneHundredNum);
-            moneyNum.AddItems(Fifty, contents.MoneyNum.FiftyNum);
-            moneyNum.AddItems(Ten, contents.MoneyNum.TenNum);
+
+            //アイテム追加＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+            format.AddItems(TenThousand, contents.MoneyNum.TenThousandNum);
+            format.AddItems(FiveThousand, contents.MoneyNum.FiveThousandNum);
+            format.AddItems(OneThousand, contents.MoneyNum.OneThousandNum);
+            format.AddItems(FiveHundred, contents.MoneyNum.FiveHundredNum);
+            format.AddItems(OneHundred, contents.MoneyNum.OneHundredNum);
+            format.AddItems(Fifty, contents.MoneyNum.FiftyNum);
+            format.AddItems(Ten, contents.MoneyNum.TenNum);
+            //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
         }
 
-        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
+        /// <summary>
+        /// 一万円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TenThousand_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(TenThousand.Text);
@@ -55,6 +71,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 五千円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FiveThousand_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(FiveThousand.Text);
@@ -63,6 +84,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 千円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OneThousand_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(OneThousand.Text);
@@ -71,6 +97,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 五百円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FiveHundred_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(FiveHundred.Text);
@@ -79,6 +110,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 百円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OneHundred_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(OneHundred.Text);
@@ -87,6 +123,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 五十円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Fifty_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(Fifty.Text);
@@ -95,6 +136,11 @@ namespace TicketMachine
             MoneySum();
         }
 
+        /// <summary>
+        /// 十円
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ten_SelectedItemChanged(object sender, EventArgs e)
         {
             int num = int.Parse(Ten.Text);
@@ -120,9 +166,9 @@ namespace TicketMachine
         /// <param name="e"></param>
         private void PurchaseButton_Click(object sender, EventArgs e)
         {
-            if (sum >= 130)
+            if (sum >= contents.TicketPrice.MoneyPrice)
             {
-                //セッター　投入数
+                //使用した各金種の数を代入
                 contents.MoneyNum.UseTenThousand = int.Parse(TenThousand.Text);
                 contents.MoneyNum.UseFiveThousand = int.Parse(FiveThousand.Text);
                 contents.MoneyNum.UseOneThousand = int.Parse(OneThousand.Text);
@@ -131,7 +177,7 @@ namespace TicketMachine
                 contents.MoneyNum.UseFifty = int.Parse(Fifty.Text);
                 contents.MoneyNum.UseTen = int.Parse(Ten.Text);
 
-                //セッター　投入数分を減らす
+                //持っている各金種から数減らす
                 contents.MoneyNum.TenNum -= contents.MoneyNum.UseTen;
                 contents.MoneyNum.FiftyNum -= contents.MoneyNum.UseFifty;
                 contents.MoneyNum.OneHundredNum -= contents.MoneyNum.UseOneHundred;
@@ -140,10 +186,19 @@ namespace TicketMachine
                 contents.MoneyNum.FiveThousandNum -= contents.MoneyNum.UseFiveThousand; ;
                 contents.MoneyNum.TenThousandNum -= contents.MoneyNum.UseTenThousand;
 
-                AfterPurchase afterPurchase = new AfterPurchase();
+                AfterPurchase_Money afterPurchase = new AfterPurchase_Money();
                 contents.Format format = new contents.Format();
                 format.SeceneChange(this, afterPurchase);
             }
+        }
+        /// <summary>
+        /// アプリケーションの×ボタン対策
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

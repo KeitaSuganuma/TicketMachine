@@ -9,7 +9,7 @@ namespace TicketMachine
     static class MAIN
     {
         /// <summary>
-        /// アプリケーションのメイン エントリ ポイントです。
+        /// アプリケーションのメインエントリポイント
         /// </summary>
         [STAThread]
         static void Main()

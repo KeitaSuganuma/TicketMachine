@@ -10,9 +10,17 @@ using System.Windows.Forms;
 
 namespace TicketMachine
 {
+    /// <summary>
+    /// 電子マネーで支払い
+    /// </summary>
     public partial class ElectronicMoney : Form
     {
+        //イベント判定
         bool isClick = false;
+
+        /// <summary>
+        /// コンストラク
+        /// </summary>
         public ElectronicMoney()
         {
             InitializeComponent();
@@ -21,11 +29,6 @@ namespace TicketMachine
         private void ElectronicMoney_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         /// <summary>
@@ -46,13 +49,25 @@ namespace TicketMachine
         /// <param name="e"></param>
         private void PurchaseButton_Click(object sender, EventArgs e)
         {
-            if (isClick==true&&contents.ElectronicMoneyNum.ElectronicalMoneyNum >= 124)
+            if (isClick==true&&contents.ElectronicMoneyNum.ElectronicalMoneyNum >= contents.TicketPrice.EleMoneyPrise)
             {
-                contents.ElectronicMoneyNum.ElectronicalMoneyNum -= 124;
+                //電子マネー代金からチケット代を引く
+                contents.ElectronicMoneyNum.ElectronicalMoneyNum -= contents.TicketPrice.EleMoneyPrise;
+
                 AfterPurchase_EleMoney afterPurchase = new AfterPurchase_EleMoney();
                 contents.Format format = new contents.Format();
                 format.SeceneChange(this, afterPurchase);
             }
+        }
+
+        /// <summary>
+        /// アプリケーションの×ボタン対策
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

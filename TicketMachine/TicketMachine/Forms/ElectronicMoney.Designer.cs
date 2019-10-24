@@ -104,7 +104,7 @@
             this.Controls.Add(this.PurchaseButton);
             this.Controls.Add(this.SelectButton);
             this.Name = "ElectronicMoney";
-            this.Text = "ElectronicMoney";
+            this.Text = "TicketMachine";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Proto_FormClosing);
             this.Load += new System.EventHandler(this.ElectronicMoney_Load);
             this.ResumeLayout(false);

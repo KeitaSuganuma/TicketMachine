@@ -1,6 +1,6 @@
 ﻿namespace TicketMachine
 {
-    partial class AfterPurchase
+    partial class AfterPurchase_Money
     {
         /// <summary>
         /// Required designer variable.
@@ -355,7 +355,7 @@
             this.ChangeTen.TabIndex = 24;
             this.ChangeTen.Text = "おつり10";
             // 
-            // AfterPurchase
+            // AfterPurchase_Money
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -392,8 +392,8 @@
             this.Controls.Add(this.FiftyNum);
             this.Controls.Add(this.TopButton);
             this.Controls.Add(this.TenNum);
-            this.Name = "AfterPurchase";
-            this.Text = "AfterPurchase";
+            this.Name = "AfterPurchase_Money";
+            this.Text = "TicketMachine";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Proto_FormClosing);
             this.Load += new System.EventHandler(this.AfterPurchase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

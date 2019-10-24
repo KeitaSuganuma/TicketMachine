@@ -11,22 +11,27 @@ using System.Windows.Forms;
 
 namespace TicketMachine
 {
+    /// <summary>
+    /// 買い方を選択
+    /// </summary>
     public partial class HowToBuy : Form
     {
         contents.Format format = new contents.Format();
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public HowToBuy()
         {
-            this.FormClosing += Proto_FormClosing;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = this.Electronic_Money;
         }
 
         /// <summary>
-        /// お金
+        /// お金で支払い
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -37,7 +42,7 @@ namespace TicketMachine
         }
 
         /// <summary>
-        /// 電子マネーで
+        /// 電子マネーで支払い
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -47,6 +52,11 @@ namespace TicketMachine
             format.SeceneChange(this, electronicMoney);
         }
 
+        /// <summary>
+        /// アプリケーションの×ボタン対策
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Proto_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

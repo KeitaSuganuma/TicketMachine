@@ -247,7 +247,8 @@
             this.Controls.Add(this.OneThousand);
             this.Controls.Add(this.TenThousand);
             this.Name = "Money";
-            this.Text = "Money";
+            this.Text = "TicketMachine";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Proto_FormClosing);
             this.Load += new System.EventHandler(this.Money_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

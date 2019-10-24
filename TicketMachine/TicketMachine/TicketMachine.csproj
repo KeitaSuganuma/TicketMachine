@@ -62,60 +62,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AfterPurchase.cs">
+    <Compile Include="contents\TicketPrice.cs" />
+    <Compile Include="Forms\AfterPurchase_Money.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AfterPurchase.Designer.cs">
-      <DependentUpon>AfterPurchase.cs</DependentUpon>
+    <Compile Include="Forms\AfterPurchase_Money.Designer.cs">
+      <DependentUpon>AfterPurchase_Money.cs</DependentUpon>
     </Compile>
-    <Compile Include="AfterPurchase_EleMoney.cs">
+    <Compile Include="Forms\AfterPurchase_EleMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AfterPurchase_EleMoney.Designer.cs">
+    <Compile Include="Forms\AfterPurchase_EleMoney.Designer.cs">
       <DependentUpon>AfterPurchase_EleMoney.cs</DependentUpon>
     </Compile>
     <Compile Include="contents\ElectronicMoneyNum.cs" />
     <Compile Include="contents\Format.cs" />
     <Compile Include="contents\MoneyNum.cs" />
-    <Compile Include="ElectronicMoney.cs">
+    <Compile Include="Forms\ElectronicMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ElectronicMoney.Designer.cs">
+    <Compile Include="Forms\ElectronicMoney.Designer.cs">
       <DependentUpon>ElectronicMoney.cs</DependentUpon>
     </Compile>
-    <Compile Include="HowToBuy.cs">
+    <Compile Include="Forms\HowToBuy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HowToBuy.Designer.cs">
+    <Compile Include="Forms\HowToBuy.Designer.cs">
       <DependentUpon>HowToBuy.cs</DependentUpon>
     </Compile>
     <Compile Include="MAIN.cs" />
-    <Compile Include="Money.cs">
+    <Compile Include="Forms\Money.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Money.Designer.cs">
+    <Compile Include="Forms\Money.Designer.cs">
       <DependentUpon>Money.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Top.cs">
+    <Compile Include="Forms\Top.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Top.Designer.cs">
+    <Compile Include="Forms\Top.Designer.cs">
       <DependentUpon>Top.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AfterPurchase.resx">
-      <DependentUpon>AfterPurchase.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\AfterPurchase_Money.resx">
+      <DependentUpon>AfterPurchase_Money.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AfterPurchase_EleMoney.resx">
+    <EmbeddedResource Include="Forms\AfterPurchase_EleMoney.resx">
       <DependentUpon>AfterPurchase_EleMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ElectronicMoney.resx">
+    <EmbeddedResource Include="Forms\ElectronicMoney.resx">
       <DependentUpon>ElectronicMoney.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HowToBuy.resx">
+    <EmbeddedResource Include="Forms\HowToBuy.resx">
       <DependentUpon>HowToBuy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Money.resx">
+    <EmbeddedResource Include="Forms\Money.resx">
       <DependentUpon>Money.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -128,7 +129,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Top.resx">
+    <EmbeddedResource Include="Forms\Top.resx">
       <DependentUpon>Top.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -156,9 +157,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\money_10.png" />
   </ItemGroup>

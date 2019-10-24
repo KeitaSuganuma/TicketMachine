@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace TicketMachine.contents
 {
+    /// <summary>
+    /// お金
+    /// </summary>
     class MoneyNum
     {
         private static int tenThousand = 1;
@@ -20,7 +23,7 @@ namespace TicketMachine.contents
 
 
         /// <summary>
-        /// １万円
+        /// 持っている１万円
         /// </summary>
         public static int TenThousandNum
         {
@@ -36,7 +39,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        /// ５千円
+        /// 持っている５千円
         /// </summary>
         public static int FiveThousandNum
         {
@@ -53,7 +56,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        /// １千円
+        /// 持っている１千円
         /// </summary>
         public static int OneThousandNum
         {
@@ -69,7 +72,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        ///　５００円
+        ///　持っている５００円
         /// </summary>
         public static int FiveHundredNum
         {
@@ -84,7 +87,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        /// １００円
+        /// 持っている１００円
         /// </summary>
         public static int OneHundredNum
         {
@@ -101,7 +104,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        /// ５０円
+        /// 持っている５０円
         /// </summary>
         public static int FiftyNum
         {
@@ -118,7 +121,7 @@ namespace TicketMachine.contents
         //===============================================================
 
         /// <summary>
-        /// １０円
+        /// 持っている１０円
         /// </summary>
         public static int TenNum
         {
@@ -132,16 +135,6 @@ namespace TicketMachine.contents
         public static int UseTen { get; set; }
 
         //===============================================================
-
-        /// <summary>
-        ///　アイテムの大きさ分を追加
-        /// </summary>
-        /// <param name="domain"></param>
-        /// <param name="numLange"></param>
-        public void AddItems(DomainUpDown domain, int numLange)
-        {
-            for (int i = 0; i <= numLange; i++) { domain.Items.Add(i); }
-        }
-   
+       
     }
 }

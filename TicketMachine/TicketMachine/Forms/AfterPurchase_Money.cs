@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace TicketMachine
 {
-    public partial class AfterPurchase : Form
+    /// <summary>
+    /// お金で支払い後
+    /// </summary>
+    public partial class AfterPurchase_Money : Form
     {
+        contents.Format format = new contents.Format();
+        //個々のおつり＝＝＝＝＝＝＝＝＝＝＝＝＝
         private int ChangeTenThousandNum = 0;
         private int ChangeFiveThousandNum = 0;
         private int ChangeOneThousandNum = 0;
@@ -19,18 +24,27 @@ namespace TicketMachine
         private int ChangeOneHandredNum = 0;
         private int ChangeFiftyNum = 0;
         private int ChangeTenNum = 0;
+        //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 
-        public AfterPurchase()
+        /// <summary>
+        /// コンストラク
+        /// </summary>
+        public AfterPurchase_Money()
         {
-            this.FormClosing += Proto_FormClosing;
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 読み込み時
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AfterPurchase_Load(object sender, EventArgs e)
         {
+            //お釣り計算
             MoneyBalance();
-            contents.Format format = new contents.Format();
-
+            
+            //各おつりを持っている各金種へ追加
             contents.MoneyNum.TenNum += ChangeTenNum;
             contents.MoneyNum.FiftyNum += ChangeFiftyNum;
             contents.MoneyNum.OneHundredNum += ChangeOneHandredNum;
@@ -55,45 +69,14 @@ namespace TicketMachine
             format.ToText("おつり : ", ListChangeMoneyLabel, ListChangeMoneyNum);
 
             //お釣り合計
-            Balance.Text = (Money.sum - 130).ToString();
-
-            #region
-            //使用した
-            //UseTen.Text = "使用数 : " + contents.MoneyNum.UseTen.ToString();
-            //UseFifty.Text = "使用数 : " + contents.MoneyNum.UseFifty.ToString();
-            //UseOneHundred.Text = "使用数 : " + contents.MoneyNum.UseOneHundred.ToString();
-            //UseFiveHundred.Text = "使用数 : " + contents.MoneyNum.UseFiveHundred.ToString();
-            //UseOneThousand.Text = "使用数 : " + contents.MoneyNum.UseOneThousand.ToString();
-            //UseFiveThousand.Text = "使用数 : " + contents.MoneyNum.UseFiveThousand.ToString();
-            //UseTenThousand.Text = "使用数 : " + contents.MoneyNum.UseTenThousand.ToString();
-            #endregion
-            #region
-            //残った
-            //TenNum.Text = "残り : " + contents.MoneyNum.TenNum.ToString();
-            //FiftyNum.Text = "残り : " + contents.MoneyNum.FiftyNum.ToString();
-            //OneHundred.Text = "残り : " + contents.MoneyNum.OneHundredNum.ToString();
-            //FiveHundred.Text = "残り : " + contents.MoneyNum.FiveHundredNum.ToString();
-            //OneThousand.Text = "残り : " + contents.MoneyNum.OneThousandNum.ToString();
-            //FiveThousand.Text = "残り : " + contents.MoneyNum.FiveThousandNum.ToString();
-            //TenThousand.Text = "残り : " + contents.MoneyNum.TenThousandNum.ToString();
-            #endregion
-            #region
-            //おつり個別
-            //ChangeTenThousand.Text = "おつり : " + ChangeTenThousandNum.ToString();
-            //ChangeFiveThousand.Text = "おつり : " + ChangeFiveThousandNum.ToString();
-            //ChangeOneThousand.Text = "おつり : " + ChangeOneThousandNum.ToString();
-            //ChangeFiveHundred.Text = "おつり : " + ChangeFiveHandredNum.ToString();
-            //ChangeOneHundred.Text = "おつり : " + ChangeOneHandredNum.ToString();
-            //ChangeFifty.Text = "おつり : " + ChangeFiftyNum.ToString();
-            //ChangeTen.Text = "おつり : " + ChangeTenNum.ToString();
-            #endregion
+            Balance.Text = (Money.sum - contents.TicketPrice.MoneyPrice).ToString();
         }
 
-        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
+        /// <summary>
+        /// トップページへ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Top_Click(object sender, EventArgs e)
         {
             Top top = new Top();
@@ -108,7 +91,7 @@ namespace TicketMachine
         {
             int sum = 0;
             sum = Money.sum - 130;
-            ChangeTenThousandNum = sum / 10000;
+            ChangeTenThousandNum = sum / 10000; 
             sum %= 10000;
             ChangeFiveThousandNum = sum / 5000;
             sum %= 5000;
@@ -121,6 +104,16 @@ namespace TicketMachine
             ChangeFiftyNum = sum / 50;
             sum %= 50;
             ChangeTenNum = sum / 10;
+        }
+
+        /// <summary>
+        /// アプリケーションの×ボタン対策
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Proto_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

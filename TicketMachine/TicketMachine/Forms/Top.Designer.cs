@@ -48,8 +48,9 @@
             this.ClientSize = new System.Drawing.Size(778, 544);
             this.Controls.Add(this.BuyButton);
             this.Name = "Top";
-            this.Text = "Top";
+            this.Text = "TicketMachine";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Proto_FormClosing);
+            this.Load += new System.EventHandler(this.Top_Load);
             this.ResumeLayout(false);
 
         }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TicketMachine.contents
 {
+    /// <summary>
+    /// 電子マネー
+    /// </summary>
     class ElectronicMoneyNum
     {
         private static int electronicalMoney = 1000;

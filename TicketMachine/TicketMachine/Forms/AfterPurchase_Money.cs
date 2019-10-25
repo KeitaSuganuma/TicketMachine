@@ -90,7 +90,7 @@ namespace TicketMachine
         public void MoneyBalance()
         {
             int sum = 0;
-            sum = Money.sum - 130;
+            sum = Money.sum - contents.TicketPrice.MoneyPrice;
             changeTenThousandNum = sum / 10000; 
             sum %= 10000;
             changeFiveThousandNum = sum / 5000;
